@@ -13,7 +13,7 @@ import {
   AtSign,
   Mail,
 } from "lucide-react";
-
+import { useEffect, useState } from "react";
 import { AgencyOsLogo } from "@/components/home/logo";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
@@ -67,6 +67,15 @@ const SOCIALS = [
 ];
 
 export function Footer() {
+
+  // Inside your Footer component:
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="relative mt-auto border-t border-border bg-surface/60">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
@@ -138,7 +147,7 @@ export function Footer() {
         {/* bottom bar */}
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>
-            © {new Date().getFullYear()} AgencyOS AI · Strategic Blueprint v2
+            © {year ?? "2026"} AgencyOS AI · Strategic Blueprint v2
           </p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span className="inline-flex items-center gap-1.5">
