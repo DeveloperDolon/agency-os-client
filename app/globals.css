@@ -1,1 +1,56 @@
 @import "tailwindcss";
+
+:root {
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E2E8F0;
+  --foreground: #0F172A;
+  --muted: #475569;
+  --primary: #4338CA;
+  --primary-foreground: #FFFFFF;
+  --pending: #B45309;
+  --pending-bg: #FEF3C7;
+  --running: #0369A1;
+  --success: #15803D;
+  --danger: #B91C1C;
+  --blocked: #475569;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0B1220;
+    --surface: #131C2E;
+    --border: #1E293B;
+    --foreground: #E2E8F0;
+    --muted: #94A3B8;
+    --primary: #818CF8;
+    --primary-foreground: #0B1220;
+    --pending: #FBBF24;
+    --pending-bg: #2A1F05;
+    --running: #38BDF8;
+    --success: #4ADE80;
+    --danger: #F87171;
+    --blocked: #94A3B8;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-pending: var(--pending);
+  --color-pending-bg: var(--pending-bg);
+  --color-running: var(--running);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-blocked: var(--blocked);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
